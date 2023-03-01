@@ -1,14 +1,17 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import { AppRouter } from './router'
+import { LandingPage } from './router/pages/landing'
+import { AppTheme } from './theme'
 
 const root = document.getElementById('root') as HTMLElement
 
-ReactDOM
-  .createRoot(root)
-  .render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  )
+const Core: React.FC = () => (
+  <StrictMode>
+    <AppTheme>
+      <AppRouter />
+    </AppTheme>
+  </StrictMode>
+)
+
+ReactDOM.createRoot(root).render(<Core />)
