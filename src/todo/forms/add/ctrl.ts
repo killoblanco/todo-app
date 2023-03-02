@@ -3,6 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import { type FormCtrl, type FormValues } from '../../types'
 import { useToDoLocalStore } from '../../stores/local'
+import { TODO_STATUS } from '../../consts'
 
 export const useFormCtrl = (): FormCtrl => {
   const { add } = useToDoLocalStore()
@@ -14,7 +15,8 @@ export const useFormCtrl = (): FormCtrl => {
   const onSubmit = handleSubmit((data: FormValues): void => {
     add({
       uid: window.crypto.randomUUID(),
-      text: data.text
+      text: data.text,
+      status: TODO_STATUS.ACTIVE
     })
     reset()
   })
