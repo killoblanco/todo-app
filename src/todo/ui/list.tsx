@@ -1,25 +1,22 @@
 import { Paper, Stack } from '@mui/material'
 import { AddToDoForm } from '../forms/add'
-import { useToDoLocalStore } from '../stores/local'
+import { ToDoActiveList } from './active-list'
+import { ToDoCompleteList } from './complete-list'
 import { ToDoListHeader } from './list-header'
-import { ToDoListItem } from './list-item'
 
-export const ToDoList: React.FC = () => {
-  const { todos } = useToDoLocalStore()
-
-  return (
-    <Stack
-      component={Paper}
-      spacing={2}
-      flexGrow={1}
-      p={3}
-      borderRadius={2}
-    >
-      <ToDoListHeader />
-      <Stack spacing={1} flexGrow={1}>
-        {todos.map((todo) => (<ToDoListItem key={todo.uid} {...todo} />))}
-      </Stack>
-      <AddToDoForm />
+export const ToDoList: React.FC = () => (
+  <Stack
+    component={Paper}
+    spacing={2}
+    flexGrow={1}
+    p={3}
+    borderRadius={2}
+  >
+    <ToDoListHeader />
+    <Stack spacing={1} flexGrow={1}>
+      <ToDoActiveList />
+      <ToDoCompleteList />
     </Stack>
-  )
-}
+    <AddToDoForm />
+  </Stack>
+)
