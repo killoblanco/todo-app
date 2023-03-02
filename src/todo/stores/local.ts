@@ -6,8 +6,8 @@ import { type Todo, type TodoLocalStorage } from '../types'
 export const useToDoLocalStore = create(persist<TodoLocalStorage>(
   (set, get) => ({
     todos: [],
-    actives: get().todos.filter((todo) => todo.status === TODO_STATUS.ACTIVE),
-    completed: get().todos.filter((todo) => todo.status === TODO_STATUS.COMPLETED),
+    getActives: () => get().todos.filter((todo) => todo.status === TODO_STATUS.ACTIVE),
+    getCompleted: () => get().todos.filter((todo) => todo.status === TODO_STATUS.COMPLETED),
     add: (todo) => { set((state) => ({ todos: [...state.todos, todo] })) },
     toggleComplete: ({ uid }: Pick<Todo, 'uid'>) => {
       set((state) => ({
