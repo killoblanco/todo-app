@@ -1,4 +1,4 @@
-import { Box, Paper, Stack } from '@mui/material'
+import { Paper, Stack } from '@mui/material'
 import { AddToDoForm } from '../forms/add'
 import { useToDoLocalStore } from '../stores/local'
 import { ToDoListHeader } from './list-header'
