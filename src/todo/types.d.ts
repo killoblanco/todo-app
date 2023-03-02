@@ -16,5 +16,8 @@ export interface FormCtrl {
 
 export interface TodoLocalStorage {
   todos: Todo[]
+  actives: Todo[]
+  completed: Todo[]
   add: (todo: Todo) => void
+  toggleComplete: (todo: Pick<Todo, 'uid'>) => void
 }
