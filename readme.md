@@ -8,8 +8,8 @@ This is a simple ToDo app built using React. It allows users to create a list of
 
 - ✅ A form for adding new tasks to the list.
 - ✅ A list of tasks displayed on the main screen.
-- ❌ The ability to mark tasks as completed or delete them from the list.
-- ❌ A counter of completed or pending tasks.
+- ✅ The ability to mark tasks as completed or delete them from the list.
+- ✅ A counter of completed or pending tasks.
 
 ### Nice to Have Features
 
